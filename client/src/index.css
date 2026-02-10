@@ -1,0 +1,53 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* base styles */
+body {
+  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+  background: #0a0a0a;
+  color: #ffffff;
+  overflow-x: hidden;
+  margin: 0;
+}
+
+/* custom component classes */
+@layer components {
+  .btn-gold {
+    @apply bg-gradient-to-br from-[#d4af37] to-[#f4d03f]
+      text-black font-semibold px-6 py-2 rounded-lg transition
+      shadow-[0_4px_20px_rgba(212,175,55,0.3)] inline-flex items-center justify-center gap-2;
+  }
+  .btn-gold:hover {
+    @apply -translate-y-0.5 shadow-[0_6px_30px_rgba(212,175,55,0.5)];
+  }
+
+  .btn-outline-gold {
+    @apply border-2 border-[#d4af37] text-[#d4af37]
+      px-6 py-2 rounded-lg transition inline-flex items-center justify-center gap-2;
+  }
+  .btn-outline-gold:hover {
+    @apply bg-[#d4af37] text-black;
+  }
+
+  .glow-card {
+    @apply bg-[rgba(20,20,20,0.8)] backdrop-blur-[15px]
+      border border-[rgba(212,175,55,0.2)] rounded-2xl transition;
+  }
+  .glow-card:hover {
+    @apply border-[rgba(212,175,55,0.6)]
+      shadow-[0_8px_40px_rgba(212,175,55,0.3)]
+      -translate-y-2;
+  }
+
+  .input-field {
+    @apply bg-[rgba(10,10,10,0.9)]
+      border border-[rgba(212,175,55,0.3)]
+      text-white w-full px-4 py-3 rounded-lg transition;
+  }
+  .input-field:focus {
+    outline: none;
+    border-color: #d4af37;
+    box-shadow: 0 0 20px rgba(212, 175, 55, 0.3);
+  }
+}
